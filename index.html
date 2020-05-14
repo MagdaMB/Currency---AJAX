@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Kalkulator walut</title>
+    <link type="text/css" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <p>Wybierz walutę:</p>
+    <select id="currency">
+        <option>EUR</option>
+        <option>GBP</option>
+        <option>NOK</option>
+        <option>USD</option>
+    </select>
+    <button id="showRates">Pokaż aktualny kurs</button>
+    <p id="actualRates"></p>
+    <p id="date"></p>
+
+    <p>KALKULATOR:</p>
+    <input type="text" id="moneyValue" />
+    <div id="result"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
