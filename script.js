@@ -1,9 +1,10 @@
-let valueOfMoney = document.querySelector("#moneyValue").value;
 let actualRates = document.querySelector("#actualRates");
-const showRates = document.querySelector("#showRates");
+const showRate = document.querySelector("#showRate");
 let actualDate = document.getElementById("date");
+const changeBtn = document.getElementById("changeMoney");
+let result = document.querySelector("#result");
 
-showRates.addEventListener("click", () => {
+showRate.addEventListener("click", () => {
   let currency = document.querySelector("#currency").value.toLowerCase();
 
   console.log(currency);
@@ -25,26 +26,62 @@ showRates.addEventListener("click", () => {
     complete: function(response) {
       let date = new Date();
       const showDate = () => {
-        switch(date.getDay()) {
+        switch (date.getDay()) {
           case 1:
-          actualDate.innerHTML = `Dziś jest poniedziałek.`
-          break;
+            actualDate.innerHTML = `Dziś jest poniedziałek.`;
+            break;
           case 2:
-          actualDate.innerHTML = `Dziś jest wtorek.`
-          break;
+            actualDate.innerHTML = `Dziś jest wtorek.`;
+            break;
           case 3:
-          actualDate.innerHTML = `Dziś jest środa.`
-          break;
+            actualDate.innerHTML = `Dziś jest środa.`;
+            break;
           case 4:
-          actualDate.innerHTML = `Dziś jest czwartek.`
-          break;
+            actualDate.innerHTML = `Dziś jest czwartek.`;
+            break;
           default:
-          actualDate.innerHTML = `Dziś jest piątek.`
+            actualDate.innerHTML = `Dziś jest piątek.`;
         }
       };
-      (date.getDay() === 0 || date.getDay() === 6)
-        ? actualDate.innerHTML = `Jest weekend - podajemy dane z piątku!`
+      date.getDay() === 0 || date.getDay() === 6
+        ? (actualDate.innerHTML = `Jest weekend - podajemy dane z piątku!`)
         : showDate();
     }
   });
+});
+
+changeBtn.addEventListener("click", () => {
+  let ratesValue = [];
+  let arr = [];
+  let currencyGive = document
+    .getElementById("currencyGive")
+    .value.toLowerCase();
+  let currencyChange = document
+    .getElementById("currencyChange")
+    .value.toLowerCase();
+  let valueOfMoneyGive = document.querySelector("#valueOfMoneyGive").value;
+
+  arr = [currencyGive, currencyChange];
+
+  for (let i = 0; i < arr.length; i++) {
+    $.ajax({
+      url:
+        "http://api.nbp.pl/api/exchangerates/rates/c/" +
+        encodeURIComponent(arr[i]),
+      method: "GET",
+      dataType: "json",
+      success: function(res) {
+        let valueCurr = res.rates[0].ask;
+        ratesValue.push(valueCurr);
+      }
+    }).done(function() {
+      result.innerHTML = ratesValue.reduce(
+        multiplication,
+        parseInt(valueOfMoneyGive)
+      );
+      function multiplication(total, num) {
+        return total * num;
+      }
+    });
+  }
 });

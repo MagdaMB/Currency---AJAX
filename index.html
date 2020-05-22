@@ -18,14 +18,28 @@
         <option>NOK</option>
         <option>USD</option>
     </select>
-    <button id="showRates">Pokaż aktualny kurs</button>
+    <button id="showRate">Pokaż aktualny kurs</button>
     <p id="actualRates"></p>
     <p id="date"></p>
 
     <p>KALKULATOR:</p>
-    <input type="text" id="moneyValue" />
-    <div id="result"></div>
+    <input type="number" id="valueOfMoneyGive" />
+    <select id="currencyGive">
+        <option>EUR</option>
+        <option>GBP</option>
+        <option>NOK</option>
+        <option>USD</option>
+    </select>
 
+    <button id="changeMoney">Zamień na: </button>
+    <select id="currencyChange">
+        <option>EUR</option>
+        <option>GBP</option>
+        <option>NOK</option>
+        <option>USD</option>
+    </select>
+    <div id="result"></div>
+    <p>Wynik zawsze zosatnie podany w zł</p>
     <script src="script.js"></script>
 </body>
 
