@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Balsamiq Sans", cursive;
+}
+
+@mixin button {
+  border-radius: 5px;
+  border: none;
+  padding: 10px 20px;
+  box-shadow: none;
+  box-sizing: border-box;
+  margin: 10px 5px 10px;
+  opacity: 0.8;
+}
+
+@mixin select {
+  border-radius: 5px;
+  padding: 8px 20px;
+  opacity: 0.8;
+}
+
+body {
+  height: 100vh;
+  background: url("images/calculate_money.jpg") no-repeat center;
+  background-size: cover;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+
+  button {
+    @include button;
+  }
+
+  select {
+    @include select;
+  }
+  p:first-child {
+    padding: 10px 0;
+    font-size: 18px;
+  }
+  p {
+    padding: 5px 0;
+    font-weight: bold;
+  }
+  
+  .block--first {
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .block--second {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    .box {
+      input {
+        border-radius: 10px;
+        padding: 10px 20px;
+        border: none;
+      }
+    }
+    p:last-child {
+      font-size: 14px;
+      font-weight: 300;
+    }
+  }
+}

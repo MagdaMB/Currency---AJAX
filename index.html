@@ -6,40 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Kalkulator walut</title>
-    <link type="text/css" href="style.css" />
+    <link type="text/css" rel="stylesheet" href="style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <p>Wybierz walutę:</p>
-    <select id="currency">
-        <option>EUR</option>
-        <option>GBP</option>
-        <option>NOK</option>
-        <option>USD</option>
-    </select>
-    <button id="showRate">Pokaż aktualny kurs</button>
-    <p id="actualRates"></p>
-    <p id="date"></p>
+    <div class="block--first">
+        <p>Wybierz walutę:</p>
+        <select id="currency">
+            <option>EUR</option>
+            <option>GBP</option>
+            <option>NOK</option>
+            <option>USD</option>
+        </select>
+        <button id="showRate">Pokaż aktualny kurs</button>
+        <p id="actualRates"></p>
+        <p id="date"></p>
+    </div>
 
-    <p>KALKULATOR:</p>
-    <input type="number" id="valueOfMoneyGive" />
-    <select id="currencyGive">
-        <option>EUR</option>
-        <option>GBP</option>
-        <option>NOK</option>
-        <option>USD</option>
-    </select>
+    <div class="block--second">
+        <p>KALKULATOR:</p>
+        <div class="box">
+            <input type="number" id="valueOfMoneyGive" />
+            <select id="currencyGive">
+                <option>EUR</option>
+                <option>GBP</option>
+                <option>NOK</option>
+                <option>USD</option>
+            </select>
 
-    <button id="changeMoney">Zamień na: </button>
-    <select id="currencyChange">
-        <option>EUR</option>
-        <option>GBP</option>
-        <option>NOK</option>
-        <option>USD</option>
-    </select>
-    <div id="result"></div>
-    <p>Wynik zawsze zosatnie podany w zł</p>
+            <button id="changeMoney">Zamień na: </button>
+            <select id="currencyChange">
+                <option>EUR</option>
+                <option>GBP</option>
+                <option>NOK</option>
+                <option>USD</option>
+            </select>
+        </div>
+        <div id="result"></div>
+        <p>Wynik zawsze zosatnie podany w zł</p>
+    </div>
     <script src="script.js"></script>
 </body>
 

@@ -74,7 +74,7 @@ changeBtn.addEventListener("click", () => {
         let valueCurr = res.rates[0].ask;
         ratesValue.push(valueCurr);
       }
-    }).done(function() {
+    }).then(function() {
       result.innerHTML = ratesValue.reduce(
         multiplication,
         parseInt(valueOfMoneyGive)
