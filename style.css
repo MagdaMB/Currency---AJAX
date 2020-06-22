@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Balsamiq Sans", cursive;
+}
+
+body {
+  height: 100vh;
+  background: url("images/calculate_money.jpg") no-repeat center;
+  background-size: cover;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+body button {
+  border-radius: 5px;
+  border: none;
+  padding: 10px 20px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 10px 5px 10px;
+  opacity: 0.8;
+}
+
+body select {
+  border-radius: 5px;
+  padding: 8px 20px;
+  opacity: 0.8;
+}
+
+body p:first-child {
+  padding: 10px 0;
+  font-size: 18px;
+}
+
+body p {
+  padding: 5px 0;
+  font-weight: bold;
+}
+
+body .block--first {
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body .block--second {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .block--second .box input {
+  border-radius: 10px;
+  padding: 10px 20px;
+  border: none;
+}
+
+body .block--second p:last-child {
+  font-size: 14px;
+  font-weight: 300;
+}
+/*# sourceMappingURL=style.css.map */
